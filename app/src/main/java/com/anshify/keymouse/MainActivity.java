@@ -110,7 +110,7 @@ public class MainActivity extends Activity {
                 cb.invoke(o, true, false);
             }
         });
-        String[] need = new String[]{"android.permission.RECORD_AUDIO","android.permission.ACCESS_FINE_LOCATION","android.permission.POST_NOTIFICATIONS","android.permission.BLUETOOTH_CONNECT","android.permission.BLUETOOTH_SCAN","android.permission.WRITE_EXTERNAL_STORAGE"};
+        String[] need = new String[]{"android.permission.ACCESS_FINE_LOCATION","android.permission.POST_NOTIFICATIONS","android.permission.BLUETOOTH_CONNECT","android.permission.BLUETOOTH_SCAN","android.permission.WRITE_EXTERNAL_STORAGE"};
         if (need.length > 0 && Build.VERSION.SDK_INT >= 23) requestPermissions(need, 1);
         
         w.loadUrl("https://appassets.androidplatform.net/assets/index.html");
