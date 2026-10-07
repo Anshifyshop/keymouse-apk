@@ -11,10 +11,8 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
     <uses-permission android:name="android.permission.BLUETOOTH_SCAN"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <application android:label="KEYMOUSE" android:icon="@mipmap/ic_launcher"
+    <application android:label="KeyMouse" android:icon="@mipmap/ic_launcher"
         android:theme="@style/AppTheme" android:hardwareAccelerated="true"
         android:usesCleartextTraffic="true" android:requestLegacyExternalStorage="true">
         <activity android:name=".MainActivity" android:exported="true" android:launchMode="singleTop"
