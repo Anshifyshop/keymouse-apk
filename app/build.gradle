@@ -1,0 +1,31 @@
+plugins { id 'com.android.application' }
+android {
+    namespace 'com.anshify.keymouse'
+    compileSdk 34
+    defaultConfig {
+        applicationId 'com.anshify.keymouse'
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName '1.0.1'
+    }
+    androidResources {
+        noCompress 'html','js','json','css','wasm','mp3','mp4','ogg','wav','webm','png','jpg','glb'
+    }
+    def ks = file('anshify.p12')
+    if (ks.exists()) {
+        signingConfigs { anshify { storeFile ks; storeType 'pkcs12'; storePassword 'anshify123'; keyAlias 'anshify'; keyPassword 'anshify123' } }
+        buildTypes {
+            debug { signingConfig signingConfigs.anshify }
+            release { signingConfig signingConfigs.anshify }
+        }
+    }
+    if (!ks.exists()) {
+        buildTypes { release { signingConfig signingConfigs.debug } }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+dependencies { implementation 'androidx.webkit:webkit:1.8.0'; implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0' }
